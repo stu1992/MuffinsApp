@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8FYHQTwWqlltcjLIyQEEXTMJ8SWN2pDILVC/O9iUrQI=",
+  "Source": "MuffinServer",
+  "BasePath": "_content/MuffinServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
