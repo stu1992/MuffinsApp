@@ -1,4 +1,4 @@
-namespace MuffinServer.Models
+namespace ProfileServer.Models
 {
     public class UserManagement
     {

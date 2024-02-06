@@ -1,4 +1,4 @@
-namespace MuffinServer.Models
+namespace ProfileServer.Models
 {
     public class User
     {
@@ -7,8 +7,14 @@ namespace MuffinServer.Models
         public string email { get; set; }
     }
 
-    public class NewUser : User
+    public class CreateNewUserRequest : User
     {
+        public int[] profiles { get; set; }
+    }
+
+    public class UpdateUserProfileRequest
+    {
+        public string email { get; set; }
         public int[] profiles { get; set; }
     }
 }

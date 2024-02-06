@@ -1,11 +1,14 @@
-﻿using MuffinServer.Models;
+﻿using ProfileServer.Models;
 
-namespace MuffinServer.Repositories
+namespace ProfileServer.Repositories
 {
     public interface IMuffins
     {
-        //public Task<IEnumerable<Muffin>> GetMuffins();
         public Task<bool> AddProfile(Profile profile);
-        public Task<bool> AddUser(NewUser user);
+        public Task<bool> UpdateProfile(UpdateProfileRequest profile);
+        public Task<bool> AddUser(CreateNewUserRequest user);
+        public Task<bool> UpdateUserProfiles(UpdateUserProfileRequest payload);
+        public Task<bool> DeleteProfile(String profileId);
+        public Task<UserManagement> GetUser(String email);
     }
 }
