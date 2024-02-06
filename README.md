@@ -1,16 +1,12 @@
-# MuffinsApp
-a basic back and front end to list your favorite muffins.
+# ProfilesApp
 
-This is a react front end and asp.net core web api back end conencting to a mysql database. It's an example of a very simple project to demonstrate a full stack architecture while the data being processed is simple, I've tried to decouple much of the business logic so that as changes are made, errors are minimized and concerns are isolated.
+A quick and dirty demonstration of some basic resful enpoints and a many-to-many db schema
 
-# What it does
-the back end provides a put and get endpoint to get a list of muffin types and persist it alphabetically, The get endpoint is used by the react app to display as a list
+very minimal error correction, a lot of dirty string literals on the repository layer and some of the models are a bit suss but otherwise I think it works ok for a few hours to get a proof of concept
+ignore the react app completely. It's no longer meaningful on this branch
 
-# Things i didn't do
-+ the mysql back end was hacked together and has passwords in code as plain text.
-+ It also assumes a certain configuration is already up and available.
-+ I didn't bother with a lot of error correction or injecting dependancies
-+ 
+run a mysql instance with a user name of "root" and a passowrd of "password"
+
 create database userprofiles;
 
 create table users(
@@ -36,15 +32,3 @@ CONSTRAINT FK_profileId FOREIGN KEY (profileId)
 REFERENCES profiles(profileId)
 );
 
-# How to run it
-for the react app
-```
-npm install
-npm start
-```
-for the api
-open and run in visual studio
-
-for the database
-run a mysql instance with a user name of "root" and a passowrd of "password"
-add a database "muffins" and a table "types" with a "type" varchar
