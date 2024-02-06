@@ -15,18 +15,29 @@ namespace MuffinServer.Controllers
             _logger = logger;
             _muffinServerService = new Services.MuffinsService();
         }
-
-        [HttpGet(Name = "GetMuffins")]
-        public IEnumerable<Muffin> Get()
+        
+        [HttpGet(Name = "GetUser")]
+        public User Get()
         {
-            return _muffinServerService.ListMuffins().Result;
+            return new MuffinServer.Models.User
+            {
+            
+            };
         }
 
-        [HttpPut(Name = "updateMuffins")]
-        public IEnumerable<Muffin> Put([FromBody] Muffin[] update)
+
+        [HttpPut(Name = "addUser")]
+        public bool addUser([FromBody] MuffinServer.Models.NewUser user)
         {
-            var response = _muffinServerService.UpdateOrderedMuffins(update).Result;
-            return update.ToList();
+            var response = _muffinServerService.AddUser(user).Result;
+            return response;
+        }
+
+        [HttpPost(Name = "addProfile")]
+        public bool addProfile([FromBody] MuffinServer.Models.Profile update)
+        {
+            var response = _muffinServerService.AddProfile(update).Result;
+            return response;
         }
     }
 }

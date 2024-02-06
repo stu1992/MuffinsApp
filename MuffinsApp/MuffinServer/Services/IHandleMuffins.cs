@@ -4,7 +4,8 @@ namespace MuffinServer.Services
 {
     public interface IHandleMuffins
     {
-        Task<IEnumerable<Muffin>> ListMuffins();
-        Task<bool> UpdateOrderedMuffins(Muffin[] muffins);
+        //Task<IEnumerable<Muffin>> ListMuffins();
+        Task<bool> AddProfile(Profile profile);
+        Task<bool> AddUser(NewUser user);
     }
 }
